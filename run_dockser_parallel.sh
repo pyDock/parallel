@@ -29,7 +29,7 @@ elif ! [ -f ${1}_rec.pdb ] || ! [ -f ${1}_lig.pdb ];then
    	echo "The setup module was not executed, please execute -> pydock $1 setup"
    	exit $E_BADARGS
 elif ! [ -f ${1}.rot ];then
-	echo "The ROT file was not generated, please execute the FTDock and/or ZDOCK and the correspondent makerot PyDock modules."
+	echo "The ROT file not found, please execute the FTDock or ZDOCK and the correspondent rotftdock or rotzdock PyDock modules."
 	exit $E_BADARGS
 fi
 
