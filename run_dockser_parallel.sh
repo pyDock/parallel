@@ -66,7 +66,7 @@ if [[ $withRMSD == 1 ]];then
 else
   	cut -c1-60 $case.ene.merged > $case.ene.merged.tmp
 fi
-$BASE_PATH/parallel/addRank.pl $case.ene.merged.tmp > $case.ene.merged.withRank
+${SCRIPT_PATH_R}/addRank.pl $case.ene.merged.tmp > $case.ene.merged.withRank
 head -n 2 tmp_pydock_00/*ene > header
 cat header $case.ene.merged.withRank > $case.ene
 echo "Done."
