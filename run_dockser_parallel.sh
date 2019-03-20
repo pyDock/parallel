@@ -51,7 +51,7 @@ split -l $rowsPerProc -d -a 2 $case.rot $case.rot.
 # Execute in parallel mode
 for ((i=0; i<numProcs; i++));do
 	echo "PROC=$i"
-	${SCRIPT_PATH_A}/run_dockser_parallel_aux.sh $case $i & 
+	${SCRIPT_PATH_R}/run_dockser_parallel_aux.sh $case $i & 
 done
 # Wait for all children to finish
 wait
