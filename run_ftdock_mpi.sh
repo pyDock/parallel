@@ -1,9 +1,10 @@
 #!/bin/bash
 E_BADARGS=65
+SCRIPT_PATH_R="`dirname \"$0\"`"
 echo "Searching FTDOCK MPI version"
-FTDOCK_MPI=`grep -w '^FTDOCK=' ../etc/pydock.conf | sed 's/FTDOCK=//g'`
+FTDOCK_MPI=`grep -w '^FTDOCK=' ${SCRIPT_PATH_R}/../etc/pydock.conf | sed 's/FTDOCK=//g'`
 type ${FTDOCK_MPI}/ftdock >/dev/null 2>&1 || { echo >&2 "FTDock not found check the PATH variable in ect/pydock.conf or install the program. Aborting."; exit ${E_BADARGS}; }
-is_MPI=`ftdock | grep "MPI" | wc -l`
+is_MPI=`${FTDOCK_MPI}/ftdock | grep "MPI" | wc -l`
 if [ $is_MPI -eq 0 ]
     then
         echo "MPI version of FTdock not found.";
