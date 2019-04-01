@@ -32,6 +32,12 @@ elif ! [ -f ${1}.rot ];then
 	echo "The ROT file not found, please execute the FTDock or ZDOCK and the correspondent rotftdock or rotzdock PyDock modules."
 	exit $E_BADARGS
 fi
+function control_c {
+    echo -en "\nClean up and Exit \n"
+    for proceso in ${Procesos[@]};do pkill -TERM -P ${proceso} 2>/dev/null;done
+    rm -R tmp_pydock_*
+    exit $?
+}
 
 case=$1
 numProcs=$2
@@ -47,12 +53,15 @@ echo "rowsPerProc=$rowsPerProc"
 
 # Split in multiple files input rot file
 split -l $rowsPerProc -d -a 2 $case.rot $case.rot.
-
 # Execute in parallel mode
 for ((i=0; i<numProcs; i++));do
+
 	echo "PROC=$i"
-	${SCRIPT_PATH_R}/run_dockser_parallel_aux.sh $case $i & 
+	${SCRIPT_PATH_R}/run_dockser_parallel_aux.sh $case $i &
+	Procesos[${i}]=$!
 done
+# Capture the Control_C kill the script.
+trap control_c SIGINT 
 # Wait for all children to finish
 wait
 wait
