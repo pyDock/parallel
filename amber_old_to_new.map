@@ -1,0 +1,168 @@
+! equivalences between new amber atom types and old (parm94) atom types
+! from parm99.dat
+LP      Cl     #lone pair
+HZ      HC     #H bond sp C (Howard et al.JCC,16,243,1995)
+
+! from frcmod.ionsff99_tip3p
+Li+     Li     #lithium   pol: J. Phys. Chem. 11,1541,(1978)
+Na+     Na     #sodium    pol: J. Phys. Chem. 11,1541,(1978)
+K+      K      #potassium
+Rb+     Rb     #rubidium
+Cs+     Cs     #cesium
+F-      F      #fluorine
+Cl-     Cl     #chlorine  (Applequist)
+Br-     Br     #bromine   (Applequist)
+I-      I      #iodine    (Applequist)
+
+! from parm10.dat
+CI      CT     #parmbsc0
+CP      CK     #sp2 C 5 memb.ring in purines (G)
+CS      CM     #sp2 C pyrimidines in pos. 5 & 6 (U)
+CX      CT     #protein C-alpha (new to ff10)    # copied from parm10   #GLYCAM_06j.dat
+C5      CK     #sp2 C 5 memb.ring in purines (A)
+C4      CM     #sp2 C pyrimidines in pos. 5 & 6 (C)
+OP      O2     #2- phosphate oxygen
+
+! from frcmod.parmbsc0_ezOL1
+C3      CT     #sp3 aliphatic C
+
+! from frcmod.parmbsc1
+CE      CT
+C1      CK     #sp2 C purines in pos. 8 Ade (CK)
+C2      CM     #sp2 C pyrimidines in pos. 5 & 6 Thy Ura (CM)
+
+! from parm15ipq_10.3.dat
+CO      C      #sp2 C carboxylate group
+2C      CT     #sp3 aliphatic C with two (duo) heavy atoms   # copied from ff12SB   #GLYCAM_06j.dat
+3C      CT     #sp3 aliphatic C with three (tres) heavy atoms  # copied from ff12SB   #GLYCAM_06j.dat
+C8      CT     #sp3 aliphatic C basic AA side chain
+OD      O      #ASN/GLN amide O; backbone
+ND      N      #ASN/GLN amide O; NHE
+OA      OH     #SER/THR/TYR hydroxyl O
+NL      N3     #LYS ammonium N; backbone N-terminus
+TN      NT     #PRO backbone N
+TJ      CT     #PRO backbone CA
+TG      CT     #GLY backbone CA
+TP      CT     #ARG/HIP/LYS backbone CA
+TM      CT     #ASP/CYM/GLU backbone CA
+TH      H      #ARG nitrogen-attached H
+TA      CT     #HID/HIE/PHE/TRP/TYR CB
+
+! from GLYCAM_06j.dat
+Cg      CT     #sp3 C aliphatic
+Cy      CT     #sp3 C aliphatic - for sialic acid only!
+Cp      CT     #sp3 C aliphatic - carbon atom bonded to an oxygen atom bonded to a phosphorus atom
+Ck      CD     #sp2 C alkenes
+Cj      CD     #sp2 C alkenes for adjacent double bonds
+Ng      N      #sp2 N amide group
+Oh      OH     #O hydroxyl group
+Os      OS     #O ether
+Oy      OS     #O ether - for sialic acid only!
+Sm      S      #sulfane carbohydrate linkage (-CH2-S-CH2-)
+Hc      HC     #H aliph. bond. to C without electrwd. groups
+Ha      HC     #H aliph. bond. to C in alkenes eg Ck
+Ho      HO     #H hydroxyl group
+Hp      HP     #H bonded to C next to positively charged group
+
+! from gaff.dat
+c       C      #Sp2 C carbonyl group
+c1      CZ     #Sp C
+c2      CD     #Sp2 C
+c3      CT     #Sp3 C
+ca      CA     #Sp2 C in pure aromatic systems
+cp      CA     #Head Sp2 C that connect two rings in biphenyl sys.
+cq      CA     #Head Sp2 C that connect two rings in biphenyl sys. identical to cp
+cc      CC     #Sp2 carbons in non-pure aromatic systems
+cd      CC     #Sp2 carbons in non-pure aromatic systems, identical to cc
+ce      CD     #Inner Sp2 carbons in conjugated systems
+cf      CD     #Inner Sp2 carbons in conjugated systems, identical to ce
+cg      CZ     #Inner Sp carbons in conjugated systems
+ch      CZ     #Inner Sp carbons in conjugated systems, identical to cg
+cx      CT     #Sp3 carbons in triangle systems
+cy      CT     #Sp3 carbons in square systems
+cu      CD     #Sp2 carbons in triangle systems
+cv      CD     #Sp2 carbons in square systems
+cz      CA     #Sp2 carbon in guanidine group
+h1      H1     #H bonded to aliphatic carbon with 1 electrwd. group
+h2      H2     #H bonded to aliphatic carbon with 2 electrwd. group
+h3      H3     #H bonded to aliphatic carbon with 3 electrwd. group
+h4      H4     #H bonded to non-sp3 carbon with 1 electrwd. group
+h5      H5     #H bonded to non-sp3 carbon with 2 electrwd. group
+ha      HA     #H bonded to aromatic carbon
+hc      HC     #H bonded to aliphatic carbon without electrwd. group
+hn      H      #H bonded to nitrogen atoms
+ho      HO     #Hydroxyl group
+hp      HP     #H bonded to phosphate
+hs      HS     #Hydrogen bonded to sulphur
+hw      HW     #Hydrogen in water
+hx      HP     #H bonded to C next to positively charged group
+f       F      #Fluorine
+cl      Cl     #Chlorine
+br      Br     #Bromine
+i       I      #Iodine
+n       N      #Sp2 nitrogen in amide groups
+n1      NY     #Sp N
+n2      N2     #aliphatic Sp2 N with two connected atoms
+n3      NT     #Sp3 N with three connected atoms
+n4      N3     #Sp3 N with four connected atoms
+na      NA     #Sp2 N with three connected atoms
+nb      NB     #Sp2 N in pure aromatic systems
+nc      NC     #Sp2 N in non-pure aromatic systems
+nd      NC     #Sp2 N in non-pure aromatic systems, identical to nc
+ne      NA     #Inner Sp2 N in conjugated systems
+nf      NA     #Inner Sp2 N in conjugated systems, identical to ne
+nh      NT     #Amine N connected one or more aromatic rings
+no      NT     #Nitro N
+ni      NT     #n in 3-memberred rings       #like n in RG3          #gaff2.dat
+nj      NT     #n in 4-memberred rings       #like n in RG4          #gaff2.dat
+nk      NT     #n4 in 3-memberred rings      #like n4/nx/ny in RG3   #gaff2.dat
+nl      NT     #n4 in 4-memberred rings      #like n4/nx/ny in RG4   #gaff2.dat
+nm      NT     #nh in 3-memberred rings      #like nh in RG3         #gaff2.dat
+nn      NT     #nh in 4-memberred rings      #like nh in RG4         #gaff2.dat
+np      NT     #n3 in 3-memberred rings      #like n3 in RG3         #gaff2.dat
+nq      NT     #n3 in 4-memberred rings      #like n3 in RG4         #gaff2.dat
+o       O      #Oxygen with one connected atom
+oh      OH     #Oxygen in hydroxyl group
+oq      OS     #os in 4-memberred rings
+os      OS     #Ether and ester oxygen
+op      OS     #os in 3-memberred rings
+ow      OW     #Oxygen in water
+p2      P      #Phosphate with two connected atoms
+p3      P      #Phosphate with three connected atoms, such as PH3
+p4      P      #Phosphate with three connected atoms, such as O=P(CH3)2
+p5      P      #Phosphate with four connected atoms, such as O=P(OH)3
+pb      P      #Sp2 P in pure aromatic systems
+pc      P      #Sp2 P in non-pure aromatic systems
+pd      P      #Sp2 P in non-pure aromatic systems, identical to pc
+pe      P      #Inner Sp2 P in conjugated systems
+pf      P      #Inner Sp2 P in conjugated systems, identical to pe
+px      P      #Special p4 in conjugated systems
+py      P      #Special p5 in conjugated systems
+s       S      #S with one connected atom
+s2      S      #S with two connected atom, involved at least one double bond
+s4      S      #S with three connected atoms
+s6      S      #S with four connected atoms
+sh      SH     #Sp3 S connected with hydrogen
+sp      S      #ss in 3-memberred rings
+sq      S      #ss in 4-memberred rings
+ss      S      #Sp3 S in thio-ester and thio-ether
+sx      S      #Special s4 in conjugated systems
+sy      S      #Special s6 in conjugated systems
+
+! from gaff2.dat
+cs      C      #Sp2 C in c=S
+ns      NT     #amind N, with 1 attached hydrogen atom
+nt      N      #amide N, with 2 attached hydrogen atoms
+nx      N3     #like n4, but only has one hydrogen atom
+ny      N3     #like n4, but only has two hydrogen atoms
+nz      N3     #like n4, but only has three three hydrogen atoms
+n+      N3     #NH4+
+nu      NT     #like nh, but only has one attached hydrogen atom
+nv      NT     #like nh, but only has two attached hydrogen atoms
+n5      NT     #like n7 in RG3
+n6      NT     #like n7 in RG4
+n7      NT     #like n3, but only has one attached hydrogen atom
+n8      NT     #like n3, but only has two attached hydrogen atoms
+n9      NT     #NH3
+
+
